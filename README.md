@@ -16,4 +16,22 @@ We will also add a function which allows the user to compare the similarity betw
 
 
 
+
+
+
+# Recording Function 
+After the user has chosen their desired questions and decides to record their answer, their response will be transcribed live. When the user presses "click to count" button, it will count the number of occurring words the user has said.
+Video below to have a better idea of the app. 
+
+![ezgif com-video-to-gif 1](https://user-images.githubusercontent.com/43848242/46548041-7aaad880-c900-11e8-88e7-b214f521ecb1.gif)
+
+
+# Plans 
+
+* Have the app to highlight transcribed text that is similar to the script the user has uploaded 
+* Multiple languages available for the app 
+
+
+
+
 I hope the community will be able to help out this idea and make it a dream come true. 
