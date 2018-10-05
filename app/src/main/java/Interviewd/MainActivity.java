@@ -3,7 +3,6 @@ package Interviewd;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
-import app.code.Interviewd.R;
 
 public class MainActivity extends AppCompatActivity {
 
