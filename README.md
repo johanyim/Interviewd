@@ -1,7 +1,8 @@
 # Interviewd
 
-Interviewd is an app that allows students to practice commonly asked questions during student leadership interviews by recording and review their transcribed response. 
-From there, the app will be able to count the number of occuring words and stutters the user has made in their response. 
+Interviewd is an app that allows students to practice commonly asked questions during student leadership interviews by recording and review their transcribed response. From there, the app will be able to count the number of occuring words and stutters the user has made in their response. 
+
+
 ![icon-60 3x](https://user-images.githubusercontent.com/43848242/46546681-5baa4780-c8fc-11e8-8b6d-cc154a2ce168.png)
 
 
