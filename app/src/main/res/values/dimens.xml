@@ -1,0 +1,4 @@
+<resources>
+    <dimen name="action_button_height">10dp</dimen>
+    <dimen name="action_button_width">10dp</dimen>
+</resources>
