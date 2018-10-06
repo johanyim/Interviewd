@@ -4,80 +4,40 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@android:color/background_dark"
+    android:background="@drawable/bg"
     tools:context="Interviewd.MainActivity">
 
+
+
     <LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
-        android:layout_height="565dp"
+        android:layout_height="match_parent"
+
+        tools:context=".MainActivity"
+
         android:orientation="vertical">
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="91dp"
-            android:orientation="horizontal"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
-
-            <Button
-                android:id="@+id/homeButton"
-                android:layout_width="@dimen/action_button_width"
-                android:layout_height="@dimen/action_button_height"
-                android:layout_weight="1"
-                android:background="@drawable/home"
-                android:padding="0dp"
-                app:layout_constraintEnd_toStartOf="@+id/scriptButton"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
-
-            <Button
-                android:id="@+id/scriptButton"
-                android:layout_width="@dimen/action_button_width"
-                android:layout_height="@dimen/action_button_height"
-                android:layout_weight="1"
-                android:background="@drawable/script"
-                android:padding="0dp"
-                app:layout_constraintTop_toTopOf="parent"
-                tools:layout_editor_absoluteX="121dp" />
-
-            <Button
-                android:id="@+id/moreButton"
-                android:layout_width="@dimen/action_button_width"
-                android:layout_height="@dimen/action_button_height"
-                android:layout_weight="1"
-                android:background="@drawable/more"
-                android:padding="0dp"
-                app:layout_constraintTop_toTopOf="parent"
-                tools:layout_editor_absoluteX="214dp" />
-
-            <Button
-                android:id="@+id/settingsButton"
-                android:layout_width="@dimen/action_button_width"
-                android:layout_height="@dimen/action_button_height"
-                android:layout_weight="1"
-                android:background="@drawable/settings"
-                android:padding="0dp" />
-
-        </LinearLayout>
-
-        <ImageView
-            android:id="@+id/centreIcon"
-            android:layout_width="187dp"
-            android:layout_height="190dp"
-            android:layout_gravity="center"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:srcCompat="@drawable/interviewd_icon_main"
-            tools:layout_editor_absoluteY="110dp" />
-
-        <Button
-            android:id="@+id/recordButton"
+        <android.support.design.widget.TabLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Start Recording" />
+            android:id="@+id/tabLayout"
+
+            android:background="@color/colorPrimary"
+            android:minHeight="?attr/actionBarSize"
+            android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
+
+        </android.support.design.widget.TabLayout>
+
+
+        <android.support.v4.view.ViewPager
+            android:layout_width="match_parent"
+            android:layout_height="fill_parent"
+            android:id="@+id/pager">
+
+        </android.support.v4.view.ViewPager>
 
     </LinearLayout>
 
