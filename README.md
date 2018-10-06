@@ -11,3 +11,27 @@ We will also add a function which will allow the user to compare the similarity 
 
 
 ![similarity](https://user-images.githubusercontent.com/43848242/46573669-3cc6b680-c9cb-11e8-8530-298fbf285e8b.JPG)
+
+
+# Counting occurring words 
+After the user has chosen their desired questions and decides to record their answer, their response will be transcribed live. When the user presses "click to count" button, it will count the number of occurring words the user has said.
+Video below to have a better idea of the app. 
+
+
+
+![ezgif com-video-to-gif 2](https://user-images.githubusercontent.com/43848242/46573645-e0fc2d80-c9ca-11e8-9566-c975ecfa8d0e.gif)
+
+
+
+
+
+
+
+
+
+# Plans 
+
+* Have the app to highlight transcribed text that is similar to the script the user has uploaded 
+* Multiple languages available for the app 
+
+
