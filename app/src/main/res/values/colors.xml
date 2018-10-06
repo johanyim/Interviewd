@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#3F51B5</color>
-    <color name="colorPrimaryDark">#303F9F</color>
-    <color name="colorAccent">#FF4081</color>
+    <color name="colorPrimary">#131313</color>
+    <color name="colorPrimaryDark">#000000</color>
+    <color name="colorAccent">#767676</color>
+
+    <color name="startRecordingColor">#ffffff</color>
+    <color name="nowRecordingColor">#ff2a31</color>
+
 </resources>
