@@ -8,10 +8,24 @@
 
     <!-- TODO: Update blank fragment layout -->
 
+    <TextView
+        android:id="@+id/listeningTextView"
+        android:layout_width="324dp"
+        android:layout_height="430dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginTop="56dp"
+        android:text="TextView"
+        android:textColor="@android:color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0" />
+
     <ImageView
         android:id="@+id/centreIcon"
-        android:layout_width="187dp"
-        android:layout_height="190dp"
+        android:layout_width="258dp"
+        android:layout_height="114dp"
         android:src="@drawable/interviewd_icon_main"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
