@@ -2,4 +2,10 @@
 <resources>
     <dimen name="action_button_width">50dp</dimen>
     <dimen name="action_button_height">90dp</dimen>
+
+
+    <!--     Info Tab      -->
+    <dimen name="info_title_text_size">36sp</dimen>
+    <dimen name="info_body_text_size">16sp</dimen>
+
 </resources>

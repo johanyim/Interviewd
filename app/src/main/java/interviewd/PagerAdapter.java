@@ -1,4 +1,4 @@
-package Interviewd;
+package interviewd;
 
 
 import android.support.v4.app.Fragment;
