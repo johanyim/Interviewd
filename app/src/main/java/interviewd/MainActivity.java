@@ -1,4 +1,4 @@
-package Interviewd;
+package interviewd;
 
 import android.net.Uri;
 import android.support.design.widget.TabLayout;
@@ -38,16 +38,18 @@ public class MainActivity extends AppCompatActivity implements Tab1.OnFragmentIn
         int[] tabImageIds = {
                 R.drawable.home,
                 R.drawable.script,
-                R.drawable.more,
+                R.drawable.info,
                 R.drawable.settings
         };
 
-        String[] tabNames = {
-                getResources().getString(R.string.tab1_name),
-                getResources().getString(R.string.tab2_name),
-                getResources().getString(R.string.tab3_name),
-                getResources().getString(R.string.tab4_name)
-        };
+        String[] tabNames = getResources().getStringArray(R.array.tabs_text_array);
+
+//        String[] tabNames = {
+//                getResources().getString(R.string.tab1_name),
+//                getResources().getString(R.string.tab2_name),
+//                getResources().getString(R.string.tab3_name),
+//                getResources().getString(R.string.tab4_name)
+//        };
 
 
         TabLayout tabLayout = (TabLayout)findViewById(R.id.tabLayout);

@@ -1,12 +1,15 @@
-package Interviewd;
+package interviewd;
 
 import android.content.Context;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.text.util.Linkify;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.LinearLayout;
+import android.widget.TextView;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -25,6 +28,10 @@ public class Tab3 extends Fragment {
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
+
+    View v;
+
+
 
     private OnFragmentInteractionListener mListener;
 
@@ -62,8 +69,11 @@ public class Tab3 extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_tab3, container, false);
+        v = inflater.inflate(R.layout.fragment_tab3, container, false);
+
+        setupAll(v);
+
+        return v;
     }
 
     // TODO: Rename method, update argument and hook method into UI event
@@ -98,10 +108,68 @@ public class Tab3 extends Fragment {
      * <p>
      * See the Android Training lesson <a href=
      * "http://developer.android.com/training/basics/fragments/communicating.html"
-     * >Communicating with Other Fragments</a> for more information.
+     * >Communicating with Other Fragments</a> for info information.
      */
     public interface OnFragmentInteractionListener {
         // TODO: Update argument type and name
         void onFragmentInteraction(Uri uri);
     }
+
+    private void setupAll(View v){
+        setupTitleAndBody(v);
+    }
+
+
+    private void setupTitleAndBody(View v){
+        String[] titles = getResources().getStringArray(R.array.info_title_text_array);
+        String[] bodies = getResources().getStringArray(R.array.info_body_text_array);
+
+//        TextView[] TitleThenBodyArray = new TextView[2*noOfTitleAndBodies];
+        TextView temp;
+
+        for (int i = 0; i < Math.max(titles.length, bodies.length); i++)
+        {
+            LinearLayout linearLayout = (LinearLayout) v.findViewById(R.id.infoPageLinearLayout);
+
+            //Handling title text
+
+            temp = new TextView(getContext());
+            try{
+                temp.setText(titles[i]);
+            }catch(ArrayIndexOutOfBoundsException e){
+                temp.setText("[Missing Title]");
+            }
+
+            Linkify.addLinks(temp, Linkify.ALL);
+            temp.setLinksClickable(true);
+
+            temp.setTextColor(getResources().getColor(R.color.infoTitleTextColor));
+            temp.setTextSize(pixelsToSp(getResources().getDimension(R.dimen.info_title_text_size)));
+            linearLayout.addView(temp);
+
+            //Handling body text
+
+            temp = new TextView(getContext());
+            try{
+                temp.setText("\n" + bodies[i] + "\n\n");
+            }catch(ArrayIndexOutOfBoundsException e){
+                temp.setText("[Missing body]");
+            }
+
+            Linkify.addLinks(temp, Linkify.ALL);
+            temp.setLinksClickable(true);
+
+            temp.setTextColor(getResources().getColor(R.color.infoBodyTextColor));
+            temp.setTextSize(pixelsToSp(getResources().getDimension(R.dimen.info_body_text_size)));
+            linearLayout.addView(temp);
+
+        }
+    }
+
+    private float pixelsToSp(float px)
+    {
+        float scaledDensity = getContext().getResources().getDisplayMetrics().scaledDensity;
+        return px/scaledDensity;
+    }//for setting the text size using values from the dimens.xml
+
 }

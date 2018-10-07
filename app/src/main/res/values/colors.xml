@@ -6,5 +6,7 @@
 
     <color name="startRecordingColor">#ffffff</color>
     <color name="nowRecordingColor">#ff2a31</color>
+    <color name="infoTitleTextColor">#ffffff</color>
+    <color name="infoBodyTextColor">#c4c4c4</color>
 
 </resources>
