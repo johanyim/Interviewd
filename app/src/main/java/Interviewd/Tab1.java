@@ -4,12 +4,14 @@ import android.content.Context;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.Button;
-
+import android.widget.ImageView;
+import android.widget.TextView;
 
 
 /**
@@ -129,29 +131,66 @@ public class Tab1 extends Fragment{
     }
 
     private void setupAll(View v){
-        setupRecordingButton(v);
+        setupListeningTextView(v);
+
+
         updateAll(v);
     }
 
-    private void setupRecordingButton(View v){
+
+
+    private void setupListeningTextView(View v){
+        TextView listeningTextV = (TextView) v.findViewById(R.id.listeningTextView);
+        listeningTextV.setVisibility(View.INVISIBLE);
+    }
+
+    //============================================================================================== Update
+
+
+    private void updateAll(View v){
+        updateRecordingButton(v);
+        updateSomething(v);
+
+    }
+
+    private void updateRecordingButton(View v){
         final Button recordButton = (Button) v.findViewById(R.id.recordButton);
+        final ImageView mainImage= (ImageView) v.findViewById(R.id.centreIcon);
         recordButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                recordButton.setTextColor(v.getResources().getColor(R.color.nowRecordingColor));
-                recordButton.setText(v.getResources().getString(R.string.now_recording_text));
+                recordButton.setTextColor(getResources().getColor(R.color.nowRecordingColor));
+                recordButton.setText(getResources().getString(R.string.now_recording_text));
+                showListeningTextView();
 
+
+                Animation animation1 = AnimationUtils.loadAnimation(getContext(), R.anim.on_record_move_main_icon);
+                mainImage.startAnimation(animation1);
+
+                Animation animation2 = AnimationUtils.loadAnimation(getContext(), R.anim.on_record_move_record_text);
+                recordButton.startAnimation(animation2);
+
+                recordButton.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+
+                    }
+                });
 
             }
         });
     }
 
-    private void updateAll(View v){
-        updateSomething(v);
-    }
-
 
     private void updateSomething(View v){
+
+    }
+
+    //============================================================================================== Methods
+
+    private void showListeningTextView(){
+        TextView listeningTextV = (TextView) v.findViewById(R.id.listeningTextView);
+        listeningTextV.setVisibility(View.VISIBLE);
 
     }
 
