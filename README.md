@@ -8,7 +8,8 @@ Interviewd is an app that allows students to practice commonly asked questions d
 # Similarity Checker 
 
 We will also add a function which will allow the user to compare the similarity between the user's response and script. Which is similar to Turnitin but this time we encourage plagiarizing your own script! One of the cool factors of this function is to highlight the user's transcribed response (which is similar to the video below) and script that conveys the same key idea of that message. By doing this, this allows the user to express their key ideas verbally without reciting their script. 
-
+But in order to do this, we will take out commonly used words before analyzing the key idea of the user's response. 
+Here is the list : https://gist.github.com/deekayen/4148741
 
 ![similarity](https://user-images.githubusercontent.com/43848242/46573669-3cc6b680-c9cb-11e8-8530-298fbf285e8b.JPG)
 
