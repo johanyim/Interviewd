@@ -1,5 +1,3 @@
-
-
 package interviewd;
 
 
@@ -9,7 +7,7 @@ import android.support.v4.app.FragmentStatePagerAdapter;
 
 public class PagerAdapter extends FragmentStatePagerAdapter {
 
-    private int noOfTabs;
+    int noOfTabs;
 
 
     public PagerAdapter(FragmentManager fm, int numberOfTabs){
