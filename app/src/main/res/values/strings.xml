@@ -28,8 +28,13 @@
     </string-array>
 
     <string-array name="info_body_text_array">
+<<<<<<< HEAD
         <item>Click on the start recording button to record the transcribed version of your response. Once when its done, the app will analyse your response and provide feedback for your next attempt. \n You can also watch the video from the link below: BLAHBBLAHBALBAHLA </item>
         <item>As a student myself, I understand the struggles of presenting in front of a large audience. Which is why we have created Interviewd. Interviewd is an app that allow users to improve their communication skills by uploading their script and see the similarity of their response from the app. </item>
+=======
+        <item>You use it like this</item>
+        <item>Interviewd is an app we created. It is also open-source.</item>
+>>>>>>> parent of 5a2ef62... tried adding a settings page
         <item>Johan Yim - Lead Programmer/Developer\nKrystal Ng - Founder/Financial Manager/Interface Designer \n\nGitHub Link: https://github.com/johanyim/Interviewd</item>
         <item>[Example text]</item>
     </string-array>
