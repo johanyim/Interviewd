@@ -164,11 +164,11 @@ public class Tab1 extends Fragment{
                 showListeningTextView();
 
 
-                Animation animation1 = AnimationUtils.loadAnimation(getContext(), R.anim.on_record_move_main_icon);
-                mainImage.startAnimation(animation1);
-
-                Animation animation2 = AnimationUtils.loadAnimation(getContext(), R.anim.on_record_move_record_text);
-                recordButton.startAnimation(animation2);
+//                Animation animation1 = AnimationUtils.loadAnimation(getContext(), R.anim.on_record_move_main_icon);
+//                mainImage.startAnimation(animation1);
+//
+//                Animation animation2 = AnimationUtils.loadAnimation(getContext(), R.anim.on_record_move_record_text);
+//                recordButton.startAnimation(animation2);
 
                 recordButton.setOnClickListener(new View.OnClickListener() {
                     @Override
