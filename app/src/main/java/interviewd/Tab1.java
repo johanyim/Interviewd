@@ -1,8 +1,11 @@
 package interviewd;
 
+import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
+import android.speech.RecognizerIntent;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -12,6 +15,10 @@ import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
+
+import java.util.ArrayList;
+import java.util.Locale;
 
 
 /**
@@ -36,6 +43,7 @@ public class Tab1 extends Fragment{
 
     Button recordButton;
     View v;
+    TextView listeningText;
 
 
     public Tab1() {
@@ -77,7 +85,6 @@ public class Tab1 extends Fragment{
         v = inflater.inflate(R.layout.fragment_tab1, container, false);
 
         setupAll(v);
-
         return v;
     }
 
@@ -125,13 +132,49 @@ public class Tab1 extends Fragment{
     }
 
 
-    public void startRecording(){
+    public void startRecording(View v){
+        Intent intent = new Intent(RecognizerIntent.ACTION_RECOGNIZE_SPEECH);
+//        Context context = getContext();//idk if this works
+        intent.putExtra(RecognizerIntent.EXTRA_LANGUAGE_MODEL, RecognizerIntent.LANGUAGE_MODEL_FREE_FORM); //or LANGUAGE_MODEL_FREE_FORM
+        intent.putExtra(RecognizerIntent.EXTRA_LANGUAGE, Locale.getDefault()); //or LANGUAGE_MODEL_FREE_FORM
 
+
+
+
+        if (intent.resolveActivity(getActivity().getPackageManager()) == null) {
+            Toast.makeText(getActivity(), "You don't support speech input", Toast.LENGTH_SHORT).show();
+        }else{
+            startActivityForResult(intent, 10);
+        }
+
+
+
+
+
+
+    }
+
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+
+        switch(requestCode){
+            case 10: //same as "startActivityForResult(intent, 10);"
+
+                if(resultCode == Activity.RESULT_OK && data != null){
+                    ArrayList<String> result = data.getStringArrayListExtra(RecognizerIntent.EXTRA_RESULTS);
+                    listeningText.setText(result.get(0));
+
+                }
+
+                break;
+        }
 
     }
 
     private void setupAll(View v){
         setupListeningTextView(v);
+
 
 
         updateAll(v);
@@ -140,8 +183,8 @@ public class Tab1 extends Fragment{
 
 
     private void setupListeningTextView(View v){
-        TextView listeningTextV = (TextView) v.findViewById(R.id.listeningTextView);
-        listeningTextV.setVisibility(View.INVISIBLE);
+        listeningText = v.findViewById(R.id.listeningTextView);
+        listeningText.setVisibility(View.INVISIBLE);
     }
 
     //============================================================================================== Update
@@ -162,6 +205,8 @@ public class Tab1 extends Fragment{
                 recordButton.setTextColor(getResources().getColor(R.color.nowRecordingColor));
                 recordButton.setText(getResources().getString(R.string.now_recording_text));
                 showListeningTextView();
+                startRecording(v);
+
 
 
 //                Animation animation1 = AnimationUtils.loadAnimation(getContext(), R.anim.on_record_move_main_icon);
@@ -189,8 +234,8 @@ public class Tab1 extends Fragment{
     //============================================================================================== Methods
 
     private void showListeningTextView(){
-        TextView listeningTextV = (TextView) v.findViewById(R.id.listeningTextView);
-        listeningTextV.setVisibility(View.VISIBLE);
+//        listeningText = (TextView) v.findViewById(R.id.listeningTextView);
+        listeningText.setVisibility(View.VISIBLE);
 
     }
 
